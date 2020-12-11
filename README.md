@@ -1,2 +1,2 @@
-# graphcode_api
+# GraphCode API
 Structure REST with FastAPI
