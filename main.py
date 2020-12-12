@@ -4,6 +4,8 @@ from db.rooms_db import RoomsInDB, save_room, get_room, get_all_rooms
 from models.rooms_model import RoomsIn, RoomsOut
 from db.hotel_db import HotelInDB, save_hotel, get_info_hotel, get_total_rooms
 from models.hotel_model import HotelIn, HotelOut
+from db.clients_db import ClientsInDB, get_client, save_client
+from models.clients_model import ClientsIn, ClientsOut
 
 from fastapi import FastAPI
 from fastapi import HTTPException
@@ -85,3 +87,23 @@ async def get_gerencia():
 
 # Creo que me falta el get y post para reportes pero eso se hace después de 
 # salir de este sprint jejejeje
+
+# Obtener el cliente, lo hace el recepcionista
+@api.get("/clients/{cli_docNumber}")
+async def get_client_doc():
+  client_in_db = get_client(cli_docNumber)
+
+  if client_in_db == None:
+    raise HTTPException(status_code = 404, detail = "El cliente no existe")
+  
+  client_out = ClientsOut(**client_in_db.dict())
+  return client_out
+
+# Crear el cliente, lo hace el recepcionista
+@api.post("/clients/new")
+async def make_client():
+  client_in_db = ClientsInDB(**client_in.dict())
+  client_in_db = save_client(client_in_db)
+  client_out = ClientsOut(**client_in_db.dict())
+  return client_out
+
