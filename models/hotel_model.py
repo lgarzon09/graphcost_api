@@ -8,7 +8,6 @@ class HotelIn(BaseModel):
   hot_phone: str
   hot_city: str
   hot_address: str
-  hot_total_rooms: int
 
 class HotelOut(BaseModel):
   hot_name: str
@@ -18,4 +17,3 @@ class HotelOut(BaseModel):
   hot_phone: str
   hot_city: str
   hot_address: str
-  hot_total_rooms: int
