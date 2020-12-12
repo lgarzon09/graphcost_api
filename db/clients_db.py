@@ -6,7 +6,7 @@ class ClientsInDB(BaseModel):
   cli_name: str
   cli_docNumber: str  
 
-database_clients = Dict[str,ClientInDB]
+database_clients = Dict[str,ClientsInDB]
 
 database_clients = {
   "1234567890": ClientsInDB(**{

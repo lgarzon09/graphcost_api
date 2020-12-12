@@ -4,6 +4,6 @@ class ClientsIn(BaseModel):
   cli_name: str
   cli_docNumber: str
 
- class ClientsOut(BaseModel):
+class ClientsOut(BaseModel):
   cli_name: str
   cli_docNumber: str  
