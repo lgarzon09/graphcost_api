@@ -32,6 +32,14 @@ def get_room(roo_type: str):
 def get_all_rooms():
   return database_rooms
 
+def get_total_rooms():
+  total_rooms = 0
+  
+  for roo_type in database_rooms.keys():
+    total_rooms += database_rooms[roo_type].roo_total
+
+  return total_rooms
+
 generator = {"id": 1}
 
 def save_room(room_in_db: RoomsInDB):
