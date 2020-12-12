@@ -4,8 +4,8 @@ from datetime import date, timedelta
 class BookingsInDB(BaseModel):
   boo_id: int = 0
   boo_cli_id: int
-  boo_dateIN: date
-  boo_dateOUT: date
+  boo_dateIN: str
+  boo_dateOUT: str
   boo_roo_id: int
   boo_name_roo: str
   boo_rec_id: int
@@ -54,13 +54,16 @@ def save_bookings(booking_in_db: BookingsInDB):
   
 #   return bookings_active
 
-def get_bookings_active(inDate: date, outDate: date):
+def get_bookings_active(inDate: str, outDate: str):
   bookings_active = []
-
+  inDate = date.fromisoformat(inDate)
+  outDate = date.fromisoformat(outDate)
   while inDate <= outDate:
     for booking in database_bookings:
-      if booking["boo_dateIN"] <= inDate and booking["boo_dateIN"] >= inDate:
+      booIn = date.fromisoformat(booking["boo_dateIN"])
+      booOut = date.fromisoformat(booking["boo_dateOUT"])
+      if booIn <= inDate and booOut >= inDate:
         bookings_active.append(booking)
-    inDate += timedelta(days = 1)
+    inDate = inDate + timedelta(days = 1)
 
   return bookings_active
