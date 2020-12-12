@@ -18,8 +18,7 @@ database_administrators = {
     "adm_name": "Ann A",
     "adm_doc": "1029384756",
     "adm_email": "ann@hotel.com",
-    "adm_phone": "3120496751",
-    "adm_password": "12345",
+    "adm_phone": "3120496751"
   })
 }
 

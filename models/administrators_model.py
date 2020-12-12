@@ -6,7 +6,6 @@ class AdministratorsIn(BaseModel):
   adm_doc: str
   adm_email: str
   adm_phone: str
-  adm_password: str
 
 class AdministratorsIn(BaseModel):
   adm_hot_id: int # Tener en cuenta
