@@ -5,9 +5,7 @@ class AdministratorsInDB(BaseModel):
   adm_hot_id: int # Tener en cuenta
   adm_name: str
   adm_doc: str
-  adm_email: str
   adm_phone: str
-  adm_password: str
 
 database_administrators = Dict[str, AdministratorsInDB]
 
@@ -17,7 +15,6 @@ database_administrators = {
     "adm_hot_id": 1, # Tener en cuenta
     "adm_name": "Ann A",
     "adm_doc": "1029384756",
-    "adm_email": "ann@hotel.com",
     "adm_phone": "3120496751"
   })
 }
