@@ -57,9 +57,9 @@ def save_bookings(booking_in_db: BookingsInDB):
 def get_bookings_active(inDate: date, outDate: date):
   bookings_active = []
 
-  while inDate <= outDate
+  while inDate <= outDate:
     for booking in database_bookings:
-      if booking["boo_dateIN"] <= inDate && booking["boo_dateIN"] >= inDate:
+      if booking["boo_dateIN"] <= inDate and booking["boo_dateIN"] >= inDate:
         bookings_active.append(booking)
     inDate += timedelta(days = 1)
 
