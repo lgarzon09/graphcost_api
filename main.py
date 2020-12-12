@@ -6,6 +6,8 @@ from db.hotel_db import HotelInDB, save_hotel, get_info_hotel, get_total_rooms
 from models.hotel_model import HotelIn, HotelOut
 from db.clients_db import ClientsInDB, get_client, save_client
 from models.clients_model import ClientsIn, ClientsOut
+from db.users_db import UsersInDB, save_user, get_user
+from models.users_model import UsersIn, UsersOut
 
 from fastapi import FastAPI
 from fastapi import HTTPException
@@ -107,3 +109,16 @@ async def make_client():
   client_out = ClientsOut(**client_in_db.dict())
   return client_out
 
+# Para el login
+@api.post("/user/auth/")
+async def auth_user(user_in: UsersIn):
+    user_in_db = get_user(user_in.use_email)
+
+    if user_in_db == None:
+        raise HTTPException(status_code=404, detail="El usuario no existe")
+
+    if user_in_db.use_password != user_in.use_password:
+        return {"Autenticado": False} # Revisar !!!!
+
+    user_out = UsersOut(**user_in.dict())
+    return user_out
