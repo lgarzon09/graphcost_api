@@ -17,7 +17,7 @@ from fastapi import HTTPException
 api = FastAPI()
 
 @api.post("/bookings/price/")
-def booking_price(booking_in: BookingsIn):
+async def booking_price(booking_in: BookingsIn):
   #necesito una fecha de entrada y salida de una reserva nueva y tipo de habitacion elegida
   #generar tabla de multiplos
   #generar ocupacion
