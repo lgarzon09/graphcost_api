@@ -9,6 +9,8 @@ from models.clients_model import ClientsIn, ClientsOut
 from db.users_db import UsersInDB, save_user, get_user
 from models.users_model import UsersIn, UsersOut
 
+from math import ceil
+
 from fastapi import FastAPI
 from fastapi import HTTPException
 
@@ -41,6 +43,8 @@ async def booking_price(booking_in: BookingsIn):
     ten = get_tens(value)
     multi = multiplier_table.get(ten)
     sale_price += multi * room_in_db.roo_price
+
+  sale_price = ceil(sale_price)
   
   return {"boo_price_charged": sale_price}
 
