@@ -74,7 +74,7 @@ database_bookings = [
   }
 ]
 
-generator = {"id": 2}
+generator = {"id": 6}
 
 def save_bookings(booking_in_db: BookingsInDB):
   generator["id"] = generator["id"] + 1
