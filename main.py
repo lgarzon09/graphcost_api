@@ -17,7 +17,7 @@ from fastapi import HTTPException
 api = FastAPI()
 
 @api.post("/bookings/price/")
-async def booking_price(booking_in: BookingsIn):
+def booking_price(booking_in: BookingsIn):
   #necesito una fecha de entrada y salida de una reserva nueva y tipo de habitacion elegida
   #generar tabla de multiplos
   #generar ocupacion
@@ -45,8 +45,11 @@ async def booking_price(booking_in: BookingsIn):
     sale_price += multi * room_in_db.roo_price
 
   sale_price = ceil(sale_price)
-  
-  return {"boo_price_charged": sale_price}
+  booking_in.boo_price_charged = sale_price
+
+  booking_out = BookingsOut(**booking_in.dict())
+  return booking_out
+  # return {"boo_price_charged": sale_price}
 
 # Guardar reservación, este enlace se usa cuando el recepcionista hace click 
 # en hacer reserva después de llenar el formulario

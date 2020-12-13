@@ -11,7 +11,6 @@ class BookingsIn(BaseModel):
   boo_price_charged: int
 
 class BookingsOut(BaseModel):
-  boo_id: int
   boo_cli_id: int
   boo_dateIN: date
   boo_dateOUT: date
