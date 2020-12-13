@@ -14,7 +14,7 @@ from fastapi import HTTPException
 
 api = FastAPI()
 
-@api.post("/bookings/price")
+@api.post("/bookings/price/")
 async def booking_price(booking_in: BookingsIn):
   #necesito una fecha de entrada y salida de una reserva nueva y tipo de habitacion elegida
   #generar tabla de multiplos
@@ -81,7 +81,7 @@ async def get_room_type(roo_type: str):
 
 # Guardar un tipo nuevo de room, este lo hace el adm en la 
 # opción de agregar otros tipos de habitación
-@api.post("/rooms/new")
+@api.post("/rooms/new/")
 async def make_room(room_in: RoomsIn):
   room_in_db = RoomsInDB(**room_in.dict())
   room_in_db = save_room(room_in_db)
@@ -90,7 +90,7 @@ async def make_room(room_in: RoomsIn):
 
 # Guardar un hotel, esto va en la parte inicial de la cuenta del admin cuando
 # se le solicita que ingrese los datos del hotel
-@api.post("/hotel/new")
+@api.post("/hotel/new/")
 async def make_hotel(hotel_in: HotelIn):
   hotel_in_db = HotelInDB(**hotel_in.dict())
   hotel_in_db = save_hotel(hotel_in_db)
@@ -116,7 +116,7 @@ async def get_hotel():
 #   occupancy_percentage = (100 * occupied_rooms) / total_rooms
 
 # Crear el cliente, lo hace el recepcionista
-@api.post("/clients/new")
+@api.post("/clients/new/")
 async def make_client(client_in: ClientsIn):
   client_in_db = ClientsInDB(**client_in.dict())
   client_in_db = save_client(client_in_db)
