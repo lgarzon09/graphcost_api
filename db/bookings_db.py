@@ -16,7 +16,7 @@ database_bookings = [
     "boo_id": 1,
     "boo_cli_id": 1,
     "boo_dateIN": "2020-12-01",
-    "boo_dateOUT": "2020-12-10",
+    "boo_dateOUT": "2020-12-19",
     "boo_roo_id": 1,
     "boo_name_roo": "A11",
     "boo_rec_id": 1,
@@ -24,11 +24,51 @@ database_bookings = [
   },
   {
     "boo_id": 2,
-    "boo_cli_id": 2,
-    "boo_dateIN": "2020-12-01",
-    "boo_dateOUT": "2020-12-09",
+    "boo_cli_id": 1,
+    "boo_dateIN": "2020-12-12",
+    "boo_dateOUT": "2020-12-16",
     "boo_roo_id": 1,
     "boo_name_roo": "A12",
+    "boo_rec_id": 1,
+    "boo_price_charged": 90000
+  },
+  {
+    "boo_id": 3,
+    "boo_cli_id": 1,
+    "boo_dateIN": "2020-12-12",
+    "boo_dateOUT": "2020-12-18",
+    "boo_roo_id": 1,
+    "boo_name_roo": "A13",
+    "boo_rec_id": 1,
+    "boo_price_charged": 90000
+  },
+  {
+    "boo_id": 4,
+    "boo_cli_id": 1,
+    "boo_dateIN": "2020-12-12",
+    "boo_dateOUT": "2020-12-16",
+    "boo_roo_id": 3,
+    "boo_name_roo": "C12",
+    "boo_rec_id": 1,
+    "boo_price_charged": 90000
+  },
+  {
+    "boo_id": 5,
+    "boo_cli_id": 1,
+    "boo_dateIN": "2020-12-12",
+    "boo_dateOUT": "2020-12-18",
+    "boo_roo_id": 2,
+    "boo_name_roo": "B13",
+    "boo_rec_id": 1,
+    "boo_price_charged": 90000
+  },
+  {
+    "boo_id": 6,
+    "boo_cli_id": 1,
+    "boo_dateIN": "2020-12-12",
+    "boo_dateOUT": "2020-12-18",
+    "boo_roo_id": 2,
+    "boo_name_roo": "B13",
     "boo_rec_id": 1,
     "boo_price_charged": 90000
   }
@@ -52,7 +92,7 @@ def get_bookings_active(inDate: date, outDate: date):
     
     for booking in database_bookings:
       
-      if date.fromisoformat(booking["boo_dateIN"]) <= inDate and date.fromisoformat(booking["boo_dateOUT"]) >= outDate:
+      if date.fromisoformat(booking["boo_dateIN"]) <= inDate and date.fromisoformat(booking["boo_dateOUT"]) >= inDate:
         bookings_today.append(booking)
     
     bookings_active.append(bookings_today)

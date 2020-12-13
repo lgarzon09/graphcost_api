@@ -15,12 +15,28 @@ database_rooms = Dict[str, RoomsInDB]
 database_rooms = {
   "A": RoomsInDB(**{
     "roo_id": 1,
-    "roo_price": 80000,
+    "roo_price": 90000,
     "roo_maintenance_cost": 70000,
     "roo_type": "A",
     "roo_description": "Habitación de tipo 1",
+    "roo_total": 15
+  }),
+  "B": RoomsInDB(**{
+    "roo_id": 2,
+    "roo_price": 120000,
+    "roo_maintenance_cost": 120000,
+    "roo_type": "B",
+    "roo_description": "Habitación de tipo 2",
     "roo_total": 10
   }),
+  "C": RoomsInDB(**{
+    "roo_id": 3,
+    "roo_price": 100000,
+    "roo_maintenance_cost": 150000,
+    "roo_type": "C",
+    "roo_description": "Habitación de tipo 3",
+    "roo_total": 5
+  })
 }
 
 def get_room(roo_type: str):
