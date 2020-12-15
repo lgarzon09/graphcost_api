@@ -23,6 +23,7 @@ origins = [
   "https://localhost.tiangolo.com",
   "http://localhost", 
   "http://localhost:8080",
+  "http://graphcode-api.herokuapp.com/",
 ]
 
 api.add_middleware(
