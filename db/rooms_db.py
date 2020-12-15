@@ -18,7 +18,7 @@ database_rooms = {
     "roo_price": 90000,
     "roo_maintenance_cost": 70000,
     "roo_type": "A",
-    "roo_description": "Habitación de tipo 1",
+    "roo_description": "Individual",
     "roo_total": 15
   }),
   "B": RoomsInDB(**{
@@ -26,7 +26,7 @@ database_rooms = {
     "roo_price": 120000,
     "roo_maintenance_cost": 120000,
     "roo_type": "B",
-    "roo_description": "Habitación de tipo 2",
+    "roo_description": "Doble",
     "roo_total": 10
   }),
   "C": RoomsInDB(**{
@@ -34,7 +34,23 @@ database_rooms = {
     "roo_price": 100000,
     "roo_maintenance_cost": 150000,
     "roo_type": "C",
-    "roo_description": "Habitación de tipo 3",
+    "roo_description": "Triple",
+    "roo_total": 5
+  }),
+  "D": RoomsInDB(**{
+    "roo_id": 4,
+    "roo_price": 200000,
+    "roo_maintenance_cost": 250000,
+    "roo_type": "D",
+    "roo_description": "Quad",
+    "roo_total": 5
+  }),
+  "E": RoomsInDB(**{
+    "roo_id": 5,
+    "roo_price": 300000,
+    "roo_maintenance_cost": 350000,
+    "roo_type": "E",
+    "roo_description": "Queen",
     "roo_total": 5
   })
 }
@@ -56,7 +72,7 @@ def get_total_rooms():
 
   return total_rooms
 
-generator = {"id": 1}
+generator = {"id": 5}
 
 def save_room(room_in_db: RoomsInDB):
   generator["id"] = generator["id"] + 1
