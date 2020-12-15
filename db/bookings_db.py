@@ -48,7 +48,7 @@ database_bookings = [
     "boo_dateIN": "2020-12-12",
     "boo_dateOUT": "2020-12-16",
     "boo_roo_id": 3,
-    "boo_name_roo": "C12",
+    "boo_name_roo": "C5",
     "boo_rec_id": 1,
     "boo_price_charged": 90000
   },
@@ -58,7 +58,7 @@ database_bookings = [
     "boo_dateIN": "2020-12-12",
     "boo_dateOUT": "2020-12-18",
     "boo_roo_id": 2,
-    "boo_name_roo": "B13",
+    "boo_name_roo": "B8",
     "boo_rec_id": 1,
     "boo_price_charged": 90000
   },
@@ -68,7 +68,7 @@ database_bookings = [
     "boo_dateIN": "2020-12-12",
     "boo_dateOUT": "2020-12-18",
     "boo_roo_id": 2,
-    "boo_name_roo": "B13",
+    "boo_name_roo": "B2",
     "boo_rec_id": 1,
     "boo_price_charged": 90000
   }
