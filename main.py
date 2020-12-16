@@ -79,6 +79,12 @@ async def make_reservation(booking_in: BookingsIn):
 
   return booking_out
 
+# Obtener reservas activas por fecha de entrada y salida
+@api.post("/bookings/")
+async def get_bookings(dateIn, dateOut):
+  occupied_rooms_list = get_bookings_active(dateIn, dateOut)
+  return occupied_rooms_list
+
 # Obtener todos los rooms y su info
 # Este se usará cuando el adm hace click en la opción de habitaciones y aparece el 
 # listado de tipo de habitaciones
