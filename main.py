@@ -80,7 +80,7 @@ async def make_reservation(booking_in: BookingsIn):
   return booking_out
 
 # Obtener reservas activas por fecha de entrada y salida
-@api.post("/bookings/")
+@api.get("/bookings/")
 async def get_bookings(dateIn, dateOut):
   occupied_rooms_list = get_bookings_active(dateIn, dateOut)
   return occupied_rooms_list
