@@ -65,9 +65,9 @@ async def booking_price(booking_in: BookingsIn):
   sale_price = ceil(sale_price)
   booking_in.boo_price_charged = sale_price
 
-  booking_out = BookingsOut(**booking_in.dict())
-  return booking_out
-  # return {"boo_price_charged": sale_price}
+  # booking_out = BookingsOut(**booking_in.dict())
+  # return booking_out
+  return { sale_price: sale_price }
 
 # Guardar reservación, este enlace se usa cuando el recepcionista hace click 
 # en hacer reserva después de llenar el formulario
