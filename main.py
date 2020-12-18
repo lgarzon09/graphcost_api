@@ -22,7 +22,7 @@ origins = [
   "http://localhost.tiangolo.com", 
   "https://localhost.tiangolo.com",
   "http://localhost", 
-  "http://localhost:8080",
+  "http://localhost:8080"
 ]
 
 api.add_middleware(
@@ -66,7 +66,7 @@ async def booking_price(booking_in: BookingsIn):
 
   # booking_out = BookingsOut(**booking_in.dict())
   # return booking_out
-  return { boo_price_charged: sale_price }
+  return sale_price
 
 # Guardar reservación, este enlace se usa cuando el recepcionista hace click 
 # en hacer reserva después de llenar el formulario
