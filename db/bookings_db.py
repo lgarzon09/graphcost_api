@@ -182,7 +182,6 @@ def get_table(price: int, maintenance_cost: int):
     dic_prices[i] = multiple
     multiple += 0.1
   
-  print(dic_prices)
   return dic_prices
 
 def get_tens(value: int):
