@@ -23,7 +23,8 @@ origins = [
   "https://localhost.tiangolo.com",
   "http://localhost", 
   "http://localhost:8080",
-  "https://graphcostapp.herokuapp.com"
+  "https://graphcostapp.herokuapp.com",
+  "https://pruebagc.herokuapp.com"
 ]
 
 api.add_middleware(
@@ -148,7 +149,7 @@ async def get_hotel():
 
 # Crear el cliente, lo hace el recepcionista
 @api.post("/clients/new/")
-async def make_client(client_in: ClientsIn):
+async def add_client(client_in: ClientsIn):
   client_in_db = ClientsInDB(**client_in.dict())
   client_in_db = save_client(client_in_db)
   client_out = ClientsOut(**client_in_db.dict())
